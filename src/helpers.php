@@ -3,13 +3,17 @@
 use Jobcerto\Options\OptionsFactory;
 
 if ( ! function_exists('options')) {
-    function options(...$args)
+    function options($args)
     {
 
         $factory = new OptionsFactory(config('options.model'));
 
         if (count($args) == 1) {
             [$key] = $args;
+
+            if (str_contains($key, '.')) {
+                return $factory->search($key);
+            }
 
             return $factory->get($key);
         }
