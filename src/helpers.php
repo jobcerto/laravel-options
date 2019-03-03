@@ -3,7 +3,7 @@
 use Jobcerto\Options\OptionsFactory;
 
 if ( ! function_exists('options')) {
-    function options($args)
+    function options(...$args)
     {
 
         $factory = new OptionsFactory(config('options.model'));
