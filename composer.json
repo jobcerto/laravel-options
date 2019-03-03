@@ -1,0 +1,53 @@
+{
+    "name": "jobcerto/laravel-options",
+    "description": "A package to give the possibility of add options data to Database",
+    "keywords": [
+        "jobcerto",
+        "laravel-options"
+    ],
+    "homepage": "https://github.com/jobcerto/laravel-options",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Eduardo Geschonke",
+            "email": "edu@Jobcerto.com",
+            "homepage": "https://jobcerto.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jobcerto\\Options\\": "src"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jobcerto\\Options\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+
+     "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Jobcerto\\Options\\OptionsServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "orchestra/testbench": "~3.0",
+        "phpunit/phpunit": "^7.0"
+
+    }
+}
