@@ -2,7 +2,6 @@
 
 namespace Jobcerto\Options\Tests;
 
-use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Collection;
 use Jobcerto\Options\Tests\TestCase;
@@ -67,12 +66,10 @@ class LaravelOptionsTest extends TestCase
     }
 
     /** @test */
-    public function it_throw_exception_when_option_doesnt_exists()
+    public function it_returns_null_when_option_doesnt_exists()
     {
-        $this->expectException(ModelNotFoundException::class);
-
-        options()->get('unknow-meta');
-
+        $this->assertNull(options()->get('unknow-meta'));
+        $this->assertNull(options('unknow-meta'));
     }
 
     /** @test */

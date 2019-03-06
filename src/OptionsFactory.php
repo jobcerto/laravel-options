@@ -29,6 +29,9 @@ class OptionsFactory implements Arrayable
 
     public function get(string $key, $castable = null)
     {
+        if ( ! $this->has($key)) {
+            return null;
+        }
 
         $value = $this->raw($key)->value;
 
